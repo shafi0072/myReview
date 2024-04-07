@@ -4,8 +4,6 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import SelectionEvolution from '../../src/Components/app/SelectionEvolutionPage'
 const index = () => {
-  
-  const router = useRouter()
 
 
   
