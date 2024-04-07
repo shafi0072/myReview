@@ -1,7 +1,7 @@
 import { LandingPageContext } from '@/src/store/ContextApi';
 import React, { useContext } from 'react';
 
-const index = ({ children }) => {
+const Index = ({ children }) => {
   const [data, setData] = useContext(LandingPageContext)
   return (
     <>
@@ -20,7 +20,7 @@ const index = ({ children }) => {
           />
         </div>
       </section>}
-      
+
       {data?.layout === 'layoutTwo' && <section className='h-screen py-[20%] items-center justify-center'>
         <div className='mx-auto text-center w-2/3'>
           <div className='flex justify-center'>
@@ -33,4 +33,4 @@ const index = ({ children }) => {
   );
 };
 
-export default index;
+export default Index;

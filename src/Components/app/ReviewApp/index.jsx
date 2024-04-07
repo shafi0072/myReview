@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { FaFacebook } from 'react-icons/fa';
 import { LandingPageContext } from '../../../store/ContextApi';
-const index = () => {
+const Index = () => {
   const [data, setData] = useContext(LandingPageContext)
   return (
     <div>
@@ -24,4 +24,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

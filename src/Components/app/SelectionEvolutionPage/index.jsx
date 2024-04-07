@@ -11,8 +11,7 @@ import Layout from '@/src/Components/core/layout'
 import { LandingPageContext } from '@/src/store/ContextApi';
 import { useRouter } from 'next/router';
 
-const index = () => {
-  const [evolutionMatches, setEvolutionMatches] = useState(0);
+const Index = () => {
   const [data, setData] = useContext(LandingPageContext)
   const colors = ['#FF0000', '#FF9D00', '#FFE600', '#A8FF00', '#008000'];
   const stars = Array(5).fill();
@@ -88,4 +87,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

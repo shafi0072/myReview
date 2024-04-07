@@ -1,9 +1,7 @@
-import React, { useContext } from 'react';
-import { FcGoogle } from 'react-icons/fc';
-import { FaFacebook } from 'react-icons/fa';
-import { LandingPageContext } from '../../../store/ContextApi';
+import React from 'react';
+
 const index = () => {
-  const [data, setData] = useContext(LandingPageContext)
+
   return (
     <div>
       <p className='py-5'>
