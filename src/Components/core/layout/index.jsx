@@ -8,7 +8,7 @@ const Index = ({ children }) => {
      {data?.layout === 'layoutOne' && <section className='h-screen grid grid-cols-2 items-center justify-center'>
         <div className='mx-auto text-center w-2/3'>
           <div className='flex justify-center'>
-            <img src={data?.logo} alt="" />
+            <img src={data?.logo} style={{width: `${data?.logoSize}%`}} alt="" />
           </div>
           {children}
         </div>

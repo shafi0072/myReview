@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { LandingPageContext } from '../../../store/ContextApi';
 
 const index = () => {
-
+  const [data, setData] = useContext(LandingPageContext)
   return (
     <div>
       <p className='py-5'>
-        We want our customer 100% satisfied. Please Let Us Know Why You have a
-        bad experience, so we can improve our service. Leave us your email to be
-        contacted.
+      {data?.feedbackPrompt}
       </p>
       <div className='w-2/3 mx-auto'>
         <div className='grid grid-cols-2 gap-4 py-2'>
@@ -44,8 +43,7 @@ const index = () => {
         </div>
       </div>
       <p className='py-5'>
-        We are trying our best to get better but if you do not wish address your
-        concerns privately and prefer to post a review click here
+        {data?.getPrompt}
       </p>
     </div>
   );

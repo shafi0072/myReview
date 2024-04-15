@@ -8,7 +8,7 @@ const ContextApis = ({ children }) => {
 
   useEffect(() => {
    if(id){
-    fetch(`https://myreview-so-back.vercel.app/landing/getLandingPagesByName/${id}`)
+    fetch(`https://my-review-server.vercel.app/landing/getLandingPagesByName/${id}`)
     .then(res => res.json())
     .then(datas => setData(datas))
     .catch(err => console.log(err))
