@@ -7,8 +7,8 @@ const Review = () => {
     const [data, setData] = useContext(LandingPageContext);
     console.log(data);
     return (
-      <div className=" bg-[#F5F5F5] h-full pt-5">
-        <div className="bg-white w-full md:w-[50%] mx-auto shadow-sm  h-full ">
+      <div className=" bg-[#F5F5F5]  h-full pt-1 lg:pt-28 flex justify-center items-center  ">
+        <div className="bg-white w-full mx-auto shadow-sm  h-full ">
           <div className=" flex justify-center  pt-20  items-center w-full ">
             <div>
               <div className="text-center  flex justify-center items-center w-full">
@@ -20,14 +20,14 @@ const Review = () => {
                   alt="logo"
                 />
               </div>
-              <p className=" px-2 md:px-24 my-3 text-[#634F20] text-xl  ">
+              <p className=" px-2 md:px-12 my-3 text-[#634F20] text-xl  ">
                 Thank you so much for your positive feedback and we are so glad
                 to hear you enjoyed your stay with us! If you have a moment, we
                 would love for you to share your thoughts on one of the review
                 sites listed below. It really helps fellow travelers get to know
                 us better and makes a big difference.
               </p>
-              <p className=" px-24 my-3 text-[#634F20] text-xl ">
+              <p className=" px-4 text-center md:px-24 my-3 text-[#634F20] text-xl ">
                 {" "}
                 Thanks again for being such a wonderful part of our hotel
                 family!{" "}
@@ -52,7 +52,7 @@ const Review = () => {
                 <hr className=" my-12  hidden md:block  border-b-8 border-[#EBBB4C] border-dashed  " />
               </div>
               <div className=" order1 md:order-2 w-[40%] md:w-[10%] text-4xl font-bold  ">
-                <div className="text-[#634F20]  ">
+                <div className="text-[#634F20]  pl-9 pb-4 ">
                   <h1> STEP </h1>
                   <h1 className=" font-extrabold text-5xl ">01</h1>
                 </div>
@@ -107,8 +107,8 @@ const Review = () => {
                   />
                 </div>
               </div>
-              <div className=" order1 md:order-2 w-[40%] md:w-[10%] text-4xl font-bold  ">
-                <div className="text-[#634F20]  ">
+              <div className=" order1 md:order-2 w-[40%]   md:w-[10%] text-4xl font-bold  ">
+                <div className="text-[#634F20] pl-9 pb-4  ">
                   <h1> STEP </h1>
                   <h1 className=" font-extrabold text-5xl ">02</h1>
                 </div>
@@ -163,7 +163,7 @@ const Review = () => {
               </div>
             </div>
           </div>
-          <h1 className=" text-5xl font-bold  my-5 text-[#634F20] ">
+          <h1 className=" text-5xl text-left md:text-center font-bold  my-5 text-[#634F20] ">
             {" "}
             Thank You{" "}
           </h1>
