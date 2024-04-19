@@ -1,5 +1,6 @@
 import { LandingPageContext } from '@/src/store/ContextApi';
 import { Button, Rating } from '@mui/material';
+import Image from 'next/image';
 import React, { useContext } from 'react';
 
 const Index = ({ children }) => {
@@ -7,30 +8,31 @@ const Index = ({ children }) => {
   return (
     <>
       {data?.layout === "layoutOne" && (
-        <section className="flex flex-col lg:flex-row  w-full  justify-around">
-          <div className="mx-auto text-center w-full">
-            <div className="flex justify-center">
-              {/* <img
-                src={data?.logo}
-                style={{ width: `${data?.logoSize}%` }}
-                alt=""
-              /> */}
-            </div>
-            {children}
+        <section className="flex     flex-col md:flex-row justify-around">
+          <div className="w-full md:w-1/2 flex justify-center items-center  md:h-screen">{children}</div>
+          <div className=" w-full md:w-1/2 h-full mt-4 md:mt-0 md:h-screen ">
+            <Image
+              height={800}
+              width={500}
+              className="h-full w-full"
+              src={data?.featuredImage}
+              alt=""
+            />
           </div>
-          {/* <div className="h-full">
-            <img src={data?.featuredImage} alt="" className="h-full" />
-          </div> */}
         </section>
       )}
 
       {data?.layout === "layoutTwo" && (
-        <section className="h-screen  items-center justify-center">
-          <div className="mx-auto text-center ">
-            <div className="flex justify-center">
-              {/* <img src={data?.logo} alt="" /> */}
-            </div>
-            {children}
+        <section className="flex   pt-36 lg:py-8 md:p-0 flex-col md:flex-row justify-around">
+          <div className="w-full md:w-1/2  md:h-screen">{children}</div>
+          <div className=" w-full md:w-1/2 h-screen ">
+            <Image
+              height={800}
+              width={500}
+              className="h-full w-full"
+              src={data?.featuredImage}
+              alt=""
+            />
           </div>
         </section>
       )}
