@@ -7,7 +7,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return <ContextApis>
     <Layout>
       <Component {...pageProps} />
-    </Layout>;
+    </Layout>
   </ContextApis>
 
 }
+
+
