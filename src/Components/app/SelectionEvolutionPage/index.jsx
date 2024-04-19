@@ -17,9 +17,19 @@ const Index = () => {
   const [data, setData] = useContext(LandingPageContext)
   const colors = ['#FF0000', '#FF9D00', '#FFE600', '#A8FF00', '#008000'];
   const stars = Array(5).fill();
-  const [value, setvalue] = useState(2);
+  const [value, setvalue] = useState(0);
   const router = useRouter()
   console.log(data)
+
+  const handleSubmit =()=>{
+    if ( data?.evolutionThershold  >=  value  ) {
+      router.push(`/feedBack/${data?.review_link}`);
+    }else{
+       router.push(`/socialRouter/${data?.review_link}`);
+    }
+
+  }
+
   return (
     <>
       {" "}
@@ -38,7 +48,7 @@ const Index = () => {
                 onChange={(e) => setvalue(e.target.value)}
                 sx={{ mt: 2 }}
                 name="size-large"
-                defaultValue={2}
+                defaultValue={0}
                 size="large"
               />
               <p className="text-xl font-semibold text-[#634F20] ">
@@ -62,6 +72,7 @@ const Index = () => {
                 <br />
                 <div className="text-left -mt-4 mb-6 ">
                   <Button
+                  onClick={handleSubmit}
                     variant="contained"
                     sx={{
                       bgcolor: "#EBBC4C",
