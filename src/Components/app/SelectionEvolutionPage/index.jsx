@@ -35,17 +35,15 @@ const Index = () => {
       <div className="flex justify-center px-3 items-center h-full w-full pt-10 ">
         <div className="w-full   md:pt-0 h-full flex flex-col gap-2 items-center justify-center">
           <Image
-            height={342}
-            width={500}
-            className={` w-[90%] md:w-[50%]   `}
-            src={
-              "https://landing.nolimits.digital/wp-content/uploads/2024/04/plaza-logo.webp"
-            }
+            height={150}
+            width={300}
+            className={`  md:w-[${data?.logoSize}%]  md:h-[${data?.logoSize}%]  `}
+            src={data?.logo}
             alt="logo"
           />
           <Rating
             onChange={(e) => setvalue(e.target.value)}
-            sx={{ mt: 2, fontSize: "3.5rem",mt:"19px" }}
+            sx={{ mt: 2, fontSize: "3.5rem", mt: "19px" }}
             name="size-large"
             defaultValue={0}
             size="large"
