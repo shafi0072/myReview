@@ -75,15 +75,13 @@ const Index = () => {
             </textarea>
             <br />
             <div className="text-left lg:-mt-4 mb-6 ">
-              <Button
+              <button
                 onClick={handleSubmit}
-                variant="contained"
-                sx={{
-                  bgcolor: "#EBBC4C",
-                }}
+                className=" bg-[#EBBC4C] px-4 py-2  text-white  rounded-sm "
+               
               >
                 Submit
-              </Button>
+              </button>
             </div>
           </div>
         </div>
