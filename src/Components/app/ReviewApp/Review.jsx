@@ -7,9 +7,9 @@ const Review = () => {
     const [data, setData] = useContext(LandingPageContext);
     console.log(data);
     return (
-      <div className=" bg-[#F5F5F5]  h-full pt-1 lg:pt-28 flex justify-center items-center  ">
+      <div className=" bg-[#F5F5F5]  h-full pt-1 md:pt-[60vh]  xl:pt-[24vh]  flex justify-center items-center  ">
         <div className="bg-white w-full mx-auto shadow-sm  h-full ">
-          <div className=" flex justify-center  pt-20  items-center w-full ">
+          <div className=" flex justify-center  pt-20   items-center w-full ">
             <div>
               <div className="text-center  flex justify-center items-center w-full">
                 <Image
@@ -20,14 +20,14 @@ const Review = () => {
                   alt="logo"
                 />
               </div>
-              <p className=" px-2 md:px-12 my-3 text-[#634F20] text-xl  ">
+              <p className=" px-3 md:px-12 my-3 text-[#634F20] text-justify md:text-center text-base lg:text-xl  ">
                 Thank you so much for your positive feedback and we are so glad
                 to hear you enjoyed your stay with us! If you have a moment, we
                 would love for you to share your thoughts on one of the review
                 sites listed below. It really helps fellow travelers get to know
                 us better and makes a big difference.
               </p>
-              <p className=" px-4 text-center md:px-24 my-3 text-[#634F20] text-xl ">
+              <p className=" px-4 text-center lg:px-24 my-3 text-[#634F20] text-xl ">
                 {" "}
                 Thanks again for being such a wonderful part of our hotel
                 family!{" "}
@@ -37,22 +37,22 @@ const Review = () => {
 
           {/* step */}
 
-          <div className="my-14">
+          <div className="my-14 ">
             {/*  */}
             <div className="flex px-4 lg:px-14 justify-between ">
               <div className=" order-2 md:order-1 w-[60%] lg:w-[45%] pr-4  ">
-                <h2 className="text-3xl text-left font-bold  text-[#634F20] ">
+                <h2 className=" text-2xl lg:text-3xl text-left font-bold  text-[#634F20] ">
                   {" "}
                   Copy Your <br /> FeedBack{" "}
                 </h2>
-                <p className=" my-3 text-[#484534] text-left text-xl font-semibold text-wrap ">
+                <p className=" my-3 text-[#484534] text-left text-base lg:text-xl font-semibold text-wrap ">
                   Click on the copy icon to the right to save your feedback from
                   the previous step to your .
                 </p>
                 <hr className=" my-12  hidden md:block  border-b-8 border-[#EBBB4C] border-dashed  " />
               </div>
-              <div className=" order1 md:order-2 w-[40%] md:w-[10%] text-4xl font-bold  ">
-                <div className="text-[#634F20]  pl-9 pb-4 ">
+              <div className=" order1 md:order-2 w-[40%] md:w-[10%] text-4xl md:text-2xl lg:text-4xl font-bold  ">
+                <div className="text-[#634F20]  pl-9 md:pl-0 pb-4 ">
                   <h1> STEP </h1>
                   <h1 className=" font-extrabold text-5xl ">01</h1>
                 </div>
@@ -80,8 +80,8 @@ const Review = () => {
               {/* </div> */}
             </div>
             {/*  */}
-            <div className="flex px-4 mt-32  lg:px-14 justify-between ">
-              <div className=" hidden md:block order-2 pt-16 mx-auto md:order-1 w-[1%] md:w-[60%] lg:w-[45%] pr-4  ">
+            <div className="flex px-2 mt-32   w-full lg:px-6 justify-between ">
+              <div className=" hidden md:block order-2 pt-[20vh] mx-auto md:order-1 w-[1%] md:w-[60%] lg:w-[45%] pr-4  ">
                 <div className="flex flex-col justify-center items-center gap-2 ">
                   <Image
                     height={100}
@@ -107,8 +107,8 @@ const Review = () => {
                   />
                 </div>
               </div>
-              <div className=" order1 md:order-2 w-[40%]   md:w-[10%] text-4xl font-bold  ">
-                <div className="text-[#634F20] pl-9 pb-4  ">
+              <div className=" order1 md:order-2 w-[40%]   md:w-[10%] text-4xl md:text-2xl lg:text-4xl font-bold  ">
+                <div className="text-[#634F20] pl-9 md:pl-0 pb-4  ">
                   <h1> STEP </h1>
                   <h1 className=" font-extrabold text-5xl ">02</h1>
                 </div>
@@ -123,12 +123,12 @@ const Review = () => {
                 />
               </div>
 
-              <div className=" order-3 pt-5 text-left md:text-right flex flex-col justify-center items-center gap-2   w-[60%] md:w-[45%]  ">
+              <div className=" order-3 pt-[20vh] pl-2  text-left md:text-right flex flex-col justify-center items-center gap-2   w-[60%] md:w-[45%]  ">
                 <div>
-                  <h2 className="text-3xl text-left md:text-right font-bold  text-[#634F20] ">
+                  <h2 className="text-2xl lg:text-3xl text-left md:text-right font-bold  text-[#634F20] ">
                     Choose a <br /> Review Site
                   </h2>
-                  <p className=" my-3 text-[#484534] text-left md:text-right text-xl font-semibold text-wrap ">
+                  <p className=" my-3 text-[#484534] text-left md:text-right text-base lg:text-xl font-semibold text-wrap ">
                     Select one of the review sites listed. Simply paste your
                     feedback into their review form and submit.
                   </p>

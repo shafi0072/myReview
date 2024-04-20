@@ -8,7 +8,7 @@ const Index = () => {
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
   // console.log(data)
   return (
-    <div className=" pt-6 md:pt-24 lg:pt-1 xl:pt-2 bg-white flex justify-center items-center h-full  ">
+    <div className=" pt-5 pb-20  md:pb-0 md:pt-28 lg:pt-20  xl:pt-2 bg-white flex justify-center items-center h-full  ">
       <div className=" w-full    mx-auto h-screen flex justify-center items-center">
         <div className=" w-full   ">
           <div className="text-center  flex justify-center items-center w-full">
@@ -20,7 +20,7 @@ const Index = () => {
               alt="logo"
             />
           </div>
-          <p className="py-5 px-6 lg:px-11 text-[#634F20] opacity-75 text-center text-[17px] md:text-xl ">
+          <p className="py-5  px-6 lg:px-11 text-[#634F20] opacity-75 text-justify md:text-center text-[17px] md:text-xl ">
             We sincerely regret that your experience did not meet your
             expectations. Your feedback is invaluable to us as it helps us to
             improve our services and ensure that all our guests enjoy their
@@ -70,7 +70,7 @@ const Index = () => {
               </button>
             </div>
           </div>
-          <p className="pt-5 text-center px-5 md:px-11 text-[#634F20] opacity-75 ">
+          <p className="pt-5  md:text-center text-justify px-5 md:px-11 text-[#634F20] opacity-75 ">
             We would appreciate the opportunity to discuss your experience
             further and see how we can make things right. Thank you for giving
             us the chance to address your concerns. If you would like to publish
