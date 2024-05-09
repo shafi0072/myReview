@@ -32,7 +32,7 @@ const Index = () => {
     }
   };
 
-  console.log({value})
+  console.log({ value })
 
   return (
     <Layout>
@@ -41,29 +41,32 @@ const Index = () => {
           <Box width={`${data?.logoSize}%`}><img src={data?.logo} alt="" /></Box>
         </Box>
         {
-          data?.evolutionQuestion && <p className="text-center my-5 text-xl text-gray-500">{data?.evolutionQuestion}</p>
+          data?.evolutionQuestion && <p className="text-center my-5 text-xl text-gray-500"
+
+            dangerouslySetInnerHTML={{ __html: data?.evolutionQuestion }}
+          ></p>
         }
-        <Box p={mediaQuery? 5 : 0}>
-        <Box display='flex' justifyContent='center' my={5}>
-          <Rating
-            name="simple-controlled"
-            value={value}
-            onChange={(event, newValue) => {
-              setValue(newValue);
-            }}
-            sx={{
-              fontSize:'50px'
-            }}
-          />
-        </Box>
-        <Box display='flex' justifyContent='center'>
-        <textarea onChange={(e) => setReviewData(e.target.value)} id="message" rows="6" cols="50" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-md border-[2px] border-gray-400 focus:ring-[#ecbc4d] focus:border-[#ecbc4d]" style={{resize:'none'}} placeholder="Type your feedback here..."></textarea>
+        <Box p={mediaQuery ? 5 : 0}>
+          <Box display='flex' justifyContent='center' my={5}>
+            <Rating
+              name="simple-controlled"
+              value={value}
+              onChange={(event, newValue) => {
+                setValue(newValue);
+              }}
+              sx={{
+                fontSize: '50px'
+              }}
+            />
+          </Box>
+          <Box display='flex' justifyContent='center'>
+            <textarea onChange={(e) => setReviewData(e.target.value)} id="message" rows="6" cols="50" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-md border-[2px] border-gray-400 focus:ring-[#ecbc4d] focus:border-[#ecbc4d]" style={{ resize: 'none' }} placeholder="Type your feedback here..."></textarea>
 
 
-        </Box>
-        <Box className='mt-2'>
-          <Button disabled={(!reviewData && value < 1)  ? true : false} onClick={handleSubmit} variant="contained" color="warning" sx={{background:'#ecbc4d'}}>Submit</Button>
-        </Box>
+          </Box>
+          <Box className='mt-2'>
+            <Button disabled={(!reviewData && value < 1) ? true : false} onClick={handleSubmit} variant="contained" color="warning" sx={{ background: '#ecbc4d' }}>Submit</Button>
+          </Box>
         </Box>
       </Box>
     </Layout>

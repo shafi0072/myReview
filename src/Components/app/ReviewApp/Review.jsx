@@ -22,8 +22,7 @@ const Review = () => {
                   alt="logo"
                 />
               </div>
-              <p className=" px-3 md:px-12 my-3 text-[#634F20] text-justify md:text-center text-base lg:text-xl  ">
-                {data?.reviewPrompt}
+              <p className=" px-3 md:px-12 my-3 text-[#634F20] text-justify md:text-center text-base lg:text-xl  " dangerouslySetInnerHTML={{ __html: data?.reviewPrompt }}>
               </p>
               
             </div>
