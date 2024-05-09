@@ -5,9 +5,9 @@ import ContextApis from '@/src/store/ContextApi'
 
 export default function App({ Component, pageProps }: AppProps) {
   return <ContextApis>
-    <Layout>
+    <>
       <Component {...pageProps} />
-    </Layout>
+    </>
   </ContextApis>
 
 }

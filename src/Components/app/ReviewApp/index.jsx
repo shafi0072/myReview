@@ -22,7 +22,7 @@ const Index = () => {
     //     <span className='capitalize'> &nbsp;Facebook</span>
     //   </button>
     // </div>
-    <div>
+    <div className='px-5'>
       <Review/>
     </div>
   );

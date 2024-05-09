@@ -2,36 +2,30 @@ import Image from "next/image";
 import { useContext } from "react";
 import { LandingPageContext } from "../../../store/ContextApi";
 import { Divider } from "@mui/material";
+import React from "react";
 
 const Review = () => {
     const [data, setData] = useContext(LandingPageContext);
     console.log(data);
     return (
-      <div className=" bg-[#F5F5F5]  h-full pt-1 md:pt-[60vh]  xl:pt-[24vh]  flex justify-center items-center  ">
-        <div className="bg-white w-full mx-auto shadow-sm  h-full ">
+      <div className="">
+        <div className=" bg-[#F5F5F5]  h-full  xl:pt-[5vh] flex justify-center items-center  ">
+        <div className="bg-white w-[50%] mx-auto shadow-sm  h-full ">
           <div className=" flex justify-center  pt-20   items-center w-full ">
             <div>
               <div className="text-center  flex justify-center items-center w-full">
                 <Image
-                  height={data?.logoSize}
-                  width={data?.logoSize}
+                   height={300}
+                width={300}
                   className={` w-[${data?.logoSize}] h-[${data?.logoSize}]  `}
                   src={data?.logo}
                   alt="logo"
                 />
               </div>
               <p className=" px-3 md:px-12 my-3 text-[#634F20] text-justify md:text-center text-base lg:text-xl  ">
-                Thank you so much for your positive feedback and we are so glad
-                to hear you enjoyed your stay with us! If you have a moment, we
-                would love for you to share your thoughts on one of the review
-                sites listed below. It really helps fellow travelers get to know
-                us better and makes a big difference.
+                {data?.reviewPrompt}
               </p>
-              <p className=" px-4 text-center lg:px-24 my-3 text-[#634F20] text-xl ">
-                {" "}
-                Thanks again for being such a wonderful part of our hotel
-                family!{" "}
-              </p>
+              
             </div>
           </div>
 
@@ -83,28 +77,19 @@ const Review = () => {
             <div className="flex px-2 mt-32   w-full lg:px-6 justify-between ">
               <div className=" hidden md:block order-2 pt-[20vh] mx-auto md:order-1 w-[1%] md:w-[60%] lg:w-[45%] pr-4  ">
                 <div className="flex flex-col justify-center items-center gap-2 ">
-                  <Image
-                    height={100}
-                    width={100}
-                    className=" w-[70%] h-[70%]  "
-                    src="https://landing.nolimits.digital/wp-content/uploads/2024/04/booking.svg"
+                  
+                 {
+                  data?.providers?.map((items, index) => {
+                    if(items?.status === 'Enabled'){
+                      return <img
+                    key={index}
+                    className=" w-[10%]"
+                    src={items?.icon}
                     alt="pic"
                   />
-                  <Image
-                    height={100}
-                    width={100}
-                    className=" w-[70%] h-[70%]   "
-                    src="https://landing.nolimits.digital/wp-content/uploads/2024/04/booking.svg"
-                    alt="hey"
-                  />
-                  <Image
-                    width={121}
-                    height={135}
-                    alt="logo"
-                    src={
-                      "https://landing.nolimits.digital/wp-content/uploads/2024/04/tripadvisor.svg"
                     }
-                  />
+                  })
+                 }
                 </div>
               </div>
               <div className=" order1 md:order-2 w-[40%]   md:w-[10%] text-4xl md:text-2xl lg:text-4xl font-bold  ">
@@ -163,11 +148,12 @@ const Review = () => {
               </div>
             </div>
           </div>
-          <h1 className=" text-5xl text-left md:text-center font-bold  my-5 text-[#634F20] ">
+          <h1 className=" text-5xl text-left md:text-center font-bold  my-[12%] text-[#634F20] ">
             {" "}
-            Thank You{" "}
+            {data?.thankYouMessage}
           </h1>
         </div>
+      </div>
       </div>
     );
 };
