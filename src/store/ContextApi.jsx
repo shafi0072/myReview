@@ -5,12 +5,25 @@ export const LandingPageContext = createContext();
 const ContextApis = ({ children }) => {
   const [data, setData] = useState({});
   const [reviewData, setReviewData] = useState('')
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState(3)
+  const [loading, setLoading] = useState(true)
   const router = useRouter()
   const { id } = router.query
 
+
+
+  useEffect(() => {
+    if (data?.sub) {
+      setLoading(false);
+    }
+    else {
+      setLoading(true)
+    }
+  }, [data])
+
   useEffect(() => {
     if (id) {
+
       const axios = require('axios');
       let data = JSON.stringify({
         query: `{
@@ -59,7 +72,6 @@ const ContextApis = ({ children }) => {
         .catch((error) => {
           console.log(error);
         });
-
     }
 
 
@@ -67,9 +79,16 @@ const ContextApis = ({ children }) => {
   console.log({ data })
 
   return (
-    <LandingPageContext.Provider value={[data, setData, value, setValue, reviewData, setReviewData]}>
+    <>
+
+{!loading && <LandingPageContext.Provider value={[data, setData, value, setValue, reviewData, setReviewData]}>
       {children}
-    </LandingPageContext.Provider>
+    </LandingPageContext.Provider>}
+
+    {
+      loading && <div style={{width:'100%', background:'white', display:'flex', justifyContent:'center'}} ><img style={{maxWidth:'100%'}} src="https://bramispizza.com/images/loader.gif" alt="" /></div>
+    }
+    </>
   );
 };
 

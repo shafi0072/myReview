@@ -8,12 +8,12 @@ const Index = ({ children }) => {
   const mediaQuery = useMediaQuery('(max-width:600px)');
   return (
     <>
-      {data?.featuredImage && (
+      {data?.featuredImage && data?.featuredImage !== "null"  &&(
         <section className="flex flex-col md:flex-row justify-around">
           <div className="w-full md:w-1/2 flex justify-center items-center bg-[#F9F9F9]  md:h-screen">
             {children}
           </div>
-         {!mediaQuery && <div className=" w-full md:w-1/2   mt-4 md:mt-0 h-screen ">
+         {!mediaQuery && <div className=" w-full md:w-1/2 mt-4 md:mt-0 h-screen ">
             <Image
               height={800}
               width={500}
@@ -23,23 +23,14 @@ const Index = ({ children }) => {
             />
           </div>}
         </section>
-      )}
+      )  }
 
-      {!data?.featuredImage && (
-        <section className="flex   pt-36 lg:py-8 md:p-0 flex-col md:flex-row justify-around">
-          <div className="w-full md:w-1/2 flex justify-center items-center bg-[#F9F9F9]  md:h-screen">
+      {data?.featuredImage === "null" || !data?.featuredImage  && (
+          <div className="w-[100%] mx-auto bg-white flex justify-center">
             {children}
           </div>
-          <div className=" w-full md:w-1/2   mt-4 md:mt-0 h-screen ">
-            <Image
-              height={800}
-              width={500}
-              className="h-full w-full"
-              src={data?.featuredImage}
-              alt=""
-            />
-          </div>
-        </section>
+          
+    
       )}
     </>
   );

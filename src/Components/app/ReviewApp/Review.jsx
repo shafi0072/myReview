@@ -1,30 +1,33 @@
 import Image from "next/image";
 import { useContext } from "react";
 import { LandingPageContext } from "../../../store/ContextApi";
-import { Divider } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 import React from "react";
 
 const Review = () => {
-    const [data, setData] = useContext(LandingPageContext);
-    console.log(data);
-    return (
-      <div className="">
-        <div className=" bg-[#F5F5F5]  h-full  xl:pt-[5vh] flex justify-center items-center  ">
+  const [data, setData] = useContext(LandingPageContext);
+  console.log(data);
+  return (
+    <div className="">
+      <div className=" bg-[#F5F5F5]  h-full  xl:pt-[5vh] flex justify-center items-center  ">
         <div className="bg-white w-[50%] mx-auto shadow-sm  h-full ">
           <div className=" flex justify-center  pt-20   items-center w-full ">
             <div>
               <div className="text-center  flex justify-center items-center w-full">
                 <Image
-                   height={300}
-                width={300}
+                  height={300}
+                  width={300}
                   className={` w-[${data?.logoSize}] h-[${data?.logoSize}]  `}
                   src={data?.logo}
                   alt="logo"
                 />
               </div>
-              <p className=" px-3 md:px-12 my-3 text-[#634F20] text-justify md:text-center text-base lg:text-xl  " dangerouslySetInnerHTML={{ __html: data?.reviewPrompt }}>
-              </p>
-              
+              <Box display='flex' justifyContent='center'>
+                <p className="w-[80%] py-5  px-6 lg:px-11 text-[#634F20] opacity-75  md:text-center text-[12px] md:text-lg " dangerouslySetInnerHTML={{ __html: data?.reviewPrompt }}>
+                </p>
+              </Box>
+
+
             </div>
           </div>
 
@@ -76,19 +79,19 @@ const Review = () => {
             <div className="flex px-2 mt-32   w-full lg:px-6 justify-between ">
               <div className=" hidden md:block order-2 pt-[20vh] mx-auto md:order-1 w-[1%] md:w-[60%] lg:w-[45%] pr-4  ">
                 <div className="flex flex-col justify-center items-center gap-2 ">
-                  
-                 {
-                  data?.providers?.map((items, index) => {
-                    if(items?.status === 'Enabled'){
-                      return <img
-                    key={index}
-                    className=" w-[10%]"
-                    src={items?.icon}
-                    alt="pic"
-                  />
-                    }
-                  })
-                 }
+
+                  {
+                    data?.providers?.map((items, index) => {
+                      if (items?.status === 'Enabled') {
+                        return <img
+                          key={index}
+                          className=" w-[30%]"
+                          src={items?.icon}
+                          alt="pic"
+                        />
+                      }
+                    })
+                  }
                 </div>
               </div>
               <div className=" order1 md:order-2 w-[40%]   md:w-[10%] text-4xl md:text-2xl lg:text-4xl font-bold  ">
@@ -153,8 +156,8 @@ const Review = () => {
           </h1>
         </div>
       </div>
-      </div>
-    );
+    </div>
+  );
 };
 
 export default Review;

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { LandingPageContext } from '../../../store/ContextApi';
 import Image from 'next/image';
+import { Box } from '@mui/material';
 
 const Index = () => {
   const [data, setData] = useContext(LandingPageContext)
@@ -8,7 +9,7 @@ const Index = () => {
   // console.log(data)
   return (
     <div className='bg-[#F5F5F5]  h-full  xl:pt-[5vh] flex justify-center items-center  '>
-      <div className=" pt-5 pb-20 w-[50%]  md:pb-0 md:pt-28 lg:pt-20  xl:pt-2 bg-white flex justify-center items-center h-full  ">
+      <div className=" pt-5 pb-20 w-[45%]  md:pb-0 md:pt-28 lg:pt-20  xl:pt-2 bg-white flex justify-center items-center h-full  ">
         <div className="   mx-auto h-screen flex justify-center items-center">
           <div className=" w-full ">
             <div className="text-center  flex justify-center items-center w-full">
@@ -20,8 +21,10 @@ const Index = () => {
                 alt="logo"
               />
             </div>
-            <p className="py-5  px-6 lg:px-11 text-[#634F20] opacity-75 text-justify md:text-center text-[17px] md:text-xl "  dangerouslySetInnerHTML={{ __html: data?.feedbackPrompt }}>
+            <Box display='flex' justifyContent='center'>
+            <p className="w-[80%] py-5  px-6 lg:px-11 text-[#634F20] opacity-75  md:text-center text-[12px] md:text-lg "  dangerouslySetInnerHTML={{ __html: data?.feedbackPrompt }}>
             </p>
+            </Box>
             <div className=" mx-auto text-[#634F20] w-full px-8 lg:w-[75%] ">
               <div className="grid grid-cols-1 md:grid-cols-2 text-[#634F20] gap-4 py-2">
                 <input
@@ -65,8 +68,10 @@ const Index = () => {
                 </button>
               </div>
             </div>
-            <p className="pt-5  md:text-center text-justify px-5 md:px-11 text-[#634F20] opacity-75 " dangerouslySetInnerHTML={{ __html: data?.getPrompt }}>
+            <Box display='flex' justifyContent='center'>
+            <p className="w-[80%] py-5  px-6 lg:px-11 text-[#634F20] opacity-75  md:text-center text-[12px] md:text-lg "  dangerouslySetInnerHTML={{ __html: data?.getPrompt }}>
             </p>
+            </Box>
           </div>
         </div>
       </div>
