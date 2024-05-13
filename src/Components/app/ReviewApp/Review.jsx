@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { LandingPageContext } from "../../../store/ContextApi";
 import { Box, Divider } from "@mui/material";
 import React from "react";
+import Link from "next/link";
 
 const Review = () => {
   const [data, setData] = useContext(LandingPageContext);
@@ -63,7 +64,7 @@ const Review = () => {
                 />
               </div>
               {/* <div className="hidden  pt-10  md:order-3 md:block "> */}
-              <div className=" md:order-3   w-[1%] md:w-[45%] flex justify-center ">
+              <div className=" md:order-3 w-[1%] md:w-[45%] flex justify-center ">
                 <Image
                   width={121}
                   height={135}
@@ -83,12 +84,15 @@ const Review = () => {
                   {
                     data?.providers?.map((items, index) => {
                       if (items?.status === 'Enabled') {
-                        return <img
-                          key={index}
-                          className=" w-[30%]"
+                        return <div className=" w-[30%] ">
+                        <Link key={index} href={items?.link}>
+                        <img
+                          className=" w-[100%]"
                           src={items?.icon}
                           alt="pic"
                         />
+                        </Link>
+                        </div>
                       }
                     })
                   }
