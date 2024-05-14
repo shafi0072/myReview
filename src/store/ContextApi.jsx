@@ -85,9 +85,7 @@ const ContextApis = ({ children }) => {
       {children}
     </LandingPageContext.Provider>}
 
-    {
-      loading && <div style={{width:'100%', background:'white', display:'flex', justifyContent:'center'}} ><img style={{maxWidth:'100%'}} src="https://bramispizza.com/images/loader.gif" alt="" /></div>
-    }
+    
     </>
   );
 };
