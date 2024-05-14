@@ -10,8 +10,9 @@ const Review = () => {
   console.log(data);
   return (
     <div className="">
+  
       <div className=" bg-[#F5F5F5]  h-full  xl:pt-[5vh] flex justify-center items-center  ">
-        <div className="bg-white w-[50%] mx-auto shadow-sm  h-full ">
+        <div className="bg-white md:w-[45%] sm:w-[100%] md:mx-auto shadow-sm  h-full ">
           <div className=" flex justify-center  pt-20   items-center w-full ">
             <div>
               <div className="text-center  flex justify-center items-center w-full">
@@ -36,7 +37,7 @@ const Review = () => {
 
           <div className="my-14 ">
             {/*  */}
-            <div className="flex px-4 lg:px-14 justify-between ">
+            <div className="flex md:px-2 lg:px-14 justify-between ">
               <div className=" order-2 md:order-1 w-[60%] lg:w-[45%] pr-4  ">
                 <h2 className=" text-2xl lg:text-3xl text-left font-bold  text-[#634F20] ">
                   {" "}
@@ -48,7 +49,7 @@ const Review = () => {
                 </p>
                 <hr className=" my-12  hidden md:block  border-b-8 border-[#EBBB4C] border-dashed  " />
               </div>
-              <div className=" order1 md:order-2 w-[40%] md:w-[10%] text-4xl md:text-2xl lg:text-4xl font-bold  ">
+              <div className=" order1 md:order-2 w-[40%] md:w-[10%] sm:text-2xl md:text-2xl lg:text-4xl font-bold  ">
                 <div className="text-[#634F20]  pl-9 md:pl-0 pb-4 ">
                   <h1> STEP </h1>
                   <h1 className=" font-extrabold text-5xl ">01</h1>
@@ -84,8 +85,8 @@ const Review = () => {
                   {
                     data?.providers?.map((items, index) => {
                       if (items?.status === 'Enabled') {
-                        return <div className=" w-[30%] ">
-                        <Link key={index} href={items?.link}>
+                        return <div key={index} className=" w-[30%] ">
+                        <Link  href={items?.link}>
                         <img
                           className=" w-[100%]"
                           src={items?.icon}
@@ -154,11 +155,14 @@ const Review = () => {
               </div>
             </div>
           </div>
-          <h1 className=" text-5xl text-left md:text-center font-bold  my-[12%] text-[#634F20] ">
+          <div className="sm:mt-[100px]">
+          <h1 className=" md:text-5xl sm:text-2xl text-left md:text-center font-bold sm:my-[50px]  md:my-[12%] text-[#634F20] ">
             {" "}
             {data?.thankYouMessage}
           </h1>
+          </div>
         </div>
+       
       </div>
     </div>
   );

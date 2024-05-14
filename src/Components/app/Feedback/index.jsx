@@ -9,7 +9,7 @@ const Index = () => {
   // console.log(data)
   return (
     <div className='bg-[#F5F5F5]  h-full  xl:pt-[5vh] flex justify-center items-center  '>
-      <div className=" pt-5 pb-20 w-[45%]  md:pb-0 md:pt-28 lg:pt-20  xl:pt-2 bg-white flex justify-center items-center h-full  ">
+      <div className=" pt-5 pb-20 md:w-[45%] sm:w-[100%]  md:pb-0 md:pt-28 lg:pt-20  xl:pt-2 bg-white flex justify-center items-center h-full  ">
         <div className="   mx-auto h-screen flex justify-center items-center">
           <div className=" w-full ">
             <div className="text-center  flex justify-center items-center w-full">

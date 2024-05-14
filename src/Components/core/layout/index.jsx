@@ -26,7 +26,7 @@ const Index = ({ children }) => {
       )  }
 
       {data?.featuredImage === "null" || !data?.featuredImage  && (
-          <div className="w-[100%] mx-auto bg-white flex justify-center">
+          <div className="w-[100%] md:mx-auto bg-white flex justify-center">
             {children}
           </div>
           
