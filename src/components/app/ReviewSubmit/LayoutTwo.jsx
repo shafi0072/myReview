@@ -7,11 +7,10 @@ import PrimaryButton from '../../core/Buttons/PrimaryButton';
 import { useRouter } from "next/router";
 
 const LayoutTwo = () => {
-  const [data, setData,  value, setValue] = useContext(LandingPageContext)
+  const [data, setData,  value, setValue, reviewData, setReviewData] = useContext(LandingPageContext);
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down(765));
   const isMidView = useMediaQuery((theme) => theme.breakpoints.down(1380));
   const theme = useTheme();
-  const [reviewData, setReviewData] = useState('');
   const router = useRouter()
   const getRows = () => {
     if (isMobile) return 6; // For mobile devices, set 6 rows
@@ -25,7 +24,7 @@ const LayoutTwo = () => {
       router.push(`/positive-feedback/${data?.id}`);
     }
   };
-
+console.log({reviewData});
   return (
     <Box height='100vh' display='flex' justifyContent='center' alignItems='center'>
         <Box width={!isMobile ? '42%' : '100%'} height={!isMobile? '90%': '100%'} sx={{background:'white'}} py={5} px={4}>
@@ -47,8 +46,6 @@ const LayoutTwo = () => {
               name="simple-controlled"
               value={value}
               onChange={(event, newValue) => {
-                console.log({newValue});
-                debugger
                 setValue(newValue);
               }}
               sx={{
@@ -66,7 +63,7 @@ const LayoutTwo = () => {
           <form onSubmit={handleSubmit}>
             <Box my={2} display='flex' width='100%' justifyContent='center'>
               <TextareaAutosize
-                onChange={(e) => setReviewData(e.target.value)}
+                onChange={(e) => {setReviewData(e.target.value); localStorage.setItem('reviewComment', JSON.stringify(e?.target?.value))}}
                 value={reviewData}
                 placeholder="Type your feedback here..."
                 rows={getRows()} // Set rows dynamically based on screen size

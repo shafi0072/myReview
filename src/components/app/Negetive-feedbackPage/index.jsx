@@ -1,13 +1,13 @@
 import React, { useContext, useState } from 'react';
 import LayoutOne from '../../core/Layout/LayoutOne';
-import { Box, Rating, Typography, useMediaQuery, useTheme, TextareaAutosize,TextField, Checkbox } from '@mui/material';
+import { Box, Rating, Typography, useMediaQuery, useTheme, TextareaAutosize, TextField, Checkbox, Grid } from '@mui/material';
 import { LandingPageContext } from '@/src/Store/ContextApi';
 import MinHeightTextarea from '../../core/inputs/MuiTextArea';
 import PrimaryButton from '../../core/Buttons/PrimaryButton';
 
 const index = () => {
   const [data, setData, setValue, value] = useContext(LandingPageContext)
-  const isMobile = useMediaQuery((theme) => theme.breakpoints.down(765));
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down(870));
   const isMidView = useMediaQuery((theme) => theme.breakpoints.down(1380));
   const theme = useTheme();
   const [reviewData, setReviewData] = useState('');
@@ -22,38 +22,42 @@ const index = () => {
   };
 
   return (
-    <Box height='100%' my={isMobile?0:2} display='flex' justifyContent='center' alignItems='center'>
-        <Box width={!isMobile ? '42%' : '100%'} height={!isMobile? '90%': '100%'} sx={{background:'white'}} py={5} px={4}>
-          <Box width='100%' display='flex' justifyContent='center'>
-            <img src={data?.logo} style={{ maxWidth: `40%` }} alt="" />
-          </Box>
-          <Box display='flex' justifyContent='center' my={4}>
-            {
-              data?.evolutionQuestion && <Typography component='p' fontSize='16px' textAlign='center' sx={{ color: theme.palette.secondary.main }}
+    <Box height='100%' my={isMobile ? 0 : 2} display='flex' justifyContent='center' alignItems='center'>
+      <Box width={!isMobile ? '42%'  : '100%'} height={!isMobile ? '90%' : '100%'} sx={{ background: 'white' }} py={5} px={4}>
+        <Box width='100%' display='flex' justifyContent='center'>
+          <img src={data?.logo} style={{ maxWidth: !isMobile ? `40%` : '70%' }}  alt="" />
+        </Box>
+        <Box display='flex' justifyContent='center' my={4}>
+          {
+            data?.evolutionQuestion && <Typography component='p' fontSize='16px' textAlign='center' sx={{ color: theme.palette.secondary.main }}
 
-                dangerouslySetInnerHTML={{ __html: data?.feedbackPrompt }}
-              ></Typography>
-            }
-          </Box>
-          <Box my={2} display='flex' justifyContent='center'>
-           
-          </Box>
-          <Box >
+              dangerouslySetInnerHTML={{ __html: data?.feedbackPrompt }}
+            ></Typography>
+          }
+        </Box>
+        <Box my={2} display='flex' justifyContent='center'>
+
+        </Box>
+        <Box >
           <Box width='100%' display='flex' justifyContent='center'>
-          <form onSubmit={handleSubmit} style={{width:'70%'}}>
-            <Box  display='flex' width='100%' justifyContent='center'>
-            <TextField sx={{mr:1}} id="outlined-basic" label="First Name" variant="outlined" fullWidth />
-            <TextField  id="outlined-basic" label="Last Name" variant="outlined" fullWidth />
-            </Box>
-            <TextField sx={{my:1}} id="outlined-basic" label="Mobile" variant="outlined" fullWidth />
-            <TextField sx={{mb:1}} id="outlined-basic" label="Email" variant="outlined" fullWidth />
-            <Typography sx={{mb:2}}>
-              <Checkbox/> <Typography component='span'>I agree to be contacted by the hotel regarding my recent stay and to receive updates on how my feedback is being addressed.</Typography>
-            </Typography>
-            <Box display='flex' justifyContent='start'>
-              <PrimaryButton text='Submit' type="submit" />
-            </Box>
-          </form>
+            <form onSubmit={handleSubmit} style={{ width: !isMobile ? '50%' : isMidView ? '100%' : '70%' }}>
+              <Grid container rowSpacing={1} spacing={1}>
+                <Grid item xs={12} lg={6} md={6} sm={12}>
+                  <TextField sx={{ mr: 1 }} id="outlined-basic" label="First Name" variant="outlined" fullWidth />
+                </Grid>
+                <Grid item xs={12} lg={6} md={6} sm={12}>
+                  <TextField id="outlined-basic" label="Last Name" variant="outlined" fullWidth />
+                </Grid>
+              </Grid>
+              <TextField sx={{ my: 1 }} id="outlined-basic" label="Mobile" variant="outlined" fullWidth />
+              <TextField sx={{ mb: 1 }} id="outlined-basic" label="Email" variant="outlined" fullWidth />
+              <Typography sx={{ mb: 2 }}>
+                <Checkbox /> <Typography component='span'>I agree to be contacted by the hotel regarding my recent stay and to receive updates on how my feedback is being addressed.</Typography>
+              </Typography>
+              <Box display='flex' justifyContent='start'>
+                <PrimaryButton text='Submit' type="submit" />
+              </Box>
+            </form>
           </Box>
           <Box display='flex' justifyContent='center' my={4}>
             {
@@ -63,9 +67,9 @@ const index = () => {
               ></Typography>
             }
           </Box>
-          </Box>
         </Box>
       </Box>
+    </Box>
   );
 };
 

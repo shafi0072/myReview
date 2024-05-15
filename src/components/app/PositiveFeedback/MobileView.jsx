@@ -1,11 +1,21 @@
 import { LandingPageContext } from '@/src/Store/ContextApi';
 import { Box, Typography, useTheme } from '@mui/material';
 import Link from 'next/link';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import SimpleSnackbar from '../ReviewSubmit/SnackBar';
 
 const MobileView = () => {
   const theme = useTheme();
-  const [data] = useContext(LandingPageContext)
+  const [data] = useContext(LandingPageContext);
+  const [open, setOpen] = useState(false)
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(JSON.parse(localStorage.getItem('reviewComment'))).then(() => {
+      setOpen(true)
+    }).catch(err => {
+      console.error('Failed to copy text: ', err);
+    });
+  };
   return (
     <Box>
       <Box display='flex' flexDirection='row' justifyContent='space-between'>
@@ -36,7 +46,7 @@ const MobileView = () => {
 
           <Box display='flex' mx={2} flexDirection='column' >
             <Box mx={10}>
-              <Box width='100%' >
+              <Box onClick={copyToClipboard} width='100%' >
                 <img src="https://landing.nolimits.digital/wp-content/uploads/2024/04/copy-icon.svg" style={{ width: '90%' }} alt="" />
               </Box>
             </Box>
@@ -93,6 +103,7 @@ const MobileView = () => {
             {data?.thankYouMessage}
           </Typography>
       </Box>
+      <SimpleSnackbar open={open} setOpen={setOpen}/>
     </Box>
   );
 };

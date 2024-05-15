@@ -6,8 +6,7 @@ import PrimaryButton from '../../core/Buttons/PrimaryButton';
 import { useRouter } from "next/router";
 
 const LayoutOneComponent = () => {
-  const [data, setData,  value, setValue] = useContext(LandingPageContext);
-  const [reviewData, setReviewData] = useState('');
+  const [data, setData,  value, setValue, reviewData, setReviewData] = useContext(LandingPageContext);
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down(765));
   const isMidView = useMediaQuery((theme) => theme.breakpoints.down(1380));
   const theme = useTheme();
@@ -26,7 +25,7 @@ const LayoutOneComponent = () => {
       router.push(`/positive-feedback/${data?.id}`);
     }
   };
-
+  console.log({reviewData});
   return (
     <LayoutOne>
       <Box height='100vh' display='flex' justifyContent='center' alignItems='center' px={5}>
@@ -60,7 +59,7 @@ const LayoutOneComponent = () => {
           <form onSubmit={handleSubmit}>
             <Box my={2} display='flex' width='100%' justifyContent='center'>
               <TextareaAutosize
-                onChange={(e) => setReviewData(e.target.value)}
+                onChange={(e) => {setReviewData(e.target.value); localStorage.setItem('reviewComment', JSON.stringify(e?.target?.value))}}
                 value={reviewData}
                 placeholder="Type your feedback here..."
                 rows={getRows()} // Set rows dynamically based on screen size

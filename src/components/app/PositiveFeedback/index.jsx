@@ -13,7 +13,7 @@ const DIrectionCode = dynamic(() => import('./DIrectionCode'), {
 });
 const index = () => {
   const [data, setData, setValue, value] = useContext(LandingPageContext)
-  const isMobile = useMediaQuery((theme) => theme.breakpoints.down(765));
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down(899));
   const isMidView = useMediaQuery((theme) => theme.breakpoints.down(1380));
   const theme = useTheme();
   const [reviewData, setReviewData] = useState('');
@@ -22,6 +22,10 @@ const index = () => {
     if (isMidView) return 8; // For mid-size devices, set 8 rows
     return 10; // For larger devices, set 10 rows
   };
+
+
+  console.log({reviewData})
+
   const handleSubmit = (event) => {
     event.preventDefault();
     // Handle form submission here
@@ -29,9 +33,9 @@ const index = () => {
 
   return (
     <Box  height='100%' my={isMobile?0:2} display='flex' justifyContent='center' alignItems='center' >
-        <Box width={!isMobile ? '42%' : '100%'} height={!isMobile? '90%': '100%'} sx={{background:'white'}} py={5} px={4}>
+        <Box width={!isMobile && !isMidView ? '42%' : isMidView && !isMobile ? '70%' : isMobile ? '100%' : '100%'} height={!isMobile? '90%': '100%'} sx={{background:'white'}} py={5} px={4}>
           <Box width='100%' display='flex' justifyContent='center'>
-            <img src={data?.logo} style={{ maxWidth: `40%` }} alt="" />
+            <img src={data?.logo} style={{ maxWidth: !isMobile ? `40%` : '70%' }} alt="" />
           </Box>
           <Box display='flex' justifyContent='center' my={4}>
             {
