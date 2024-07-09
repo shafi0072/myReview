@@ -57,7 +57,7 @@ const ContextApis = ({ children }) => {
       let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'https://spyros-review-backend-graphql.vercel.app/',
+        url: 'https://reviewoso-bac-7ec066579c00.herokuapp.com/',
         headers: {
           'Content-Type': 'application/json'
         },

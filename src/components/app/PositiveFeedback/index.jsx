@@ -6,6 +6,7 @@ import MinHeightTextarea from '../../core/inputs/MuiTextArea';
 import PrimaryButton from '../../core/Buttons/PrimaryButton';
 import dynamic from 'next/dynamic';
 import MobileView from './MobileView';
+import Head from 'next/head';
 
 const DIrectionCode = dynamic(() => import('./DIrectionCode'), {
   loading: () => <p>Loading...</p>,
@@ -32,7 +33,11 @@ const index = () => {
   };
 
   return (
-    <Box  height='100%' my={isMobile?0:2} display='flex' justifyContent='center' alignItems='center' >
+    <>
+    <Head>
+      <title>{data?.pageTitle}</title>
+    </Head>
+      <Box  height='100%' my={isMobile?0:2} display='flex' justifyContent='center' alignItems='center' >
         <Box width={!isMobile && !isMidView ? '42%' : isMidView && !isMobile ? '70%' : isMobile ? '100%' : '100%'} height={!isMobile? '90%': '100%'} sx={{background:'white'}} py={5} px={4}>
           <Box width='100%' display='flex' justifyContent='center'>
             <img src={data?.logo} style={{ maxWidth: !isMobile ? `40%` : '70%' }} alt="" />
@@ -52,6 +57,7 @@ const index = () => {
 
         </Box>
       </Box>
+    </>
   );
 };
 

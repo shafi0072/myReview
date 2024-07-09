@@ -10,6 +10,7 @@ const LayoutTwo = () => {
   const [data, setData,  value, setValue, reviewData, setReviewData] = useContext(LandingPageContext);
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down(765));
   const isMidView = useMediaQuery((theme) => theme.breakpoints.down(1380));
+  console.log({isMobile})
   const theme = useTheme();
   const router = useRouter()
   const getRows = () => {
@@ -26,22 +27,17 @@ const LayoutTwo = () => {
   };
 console.log({reviewData});
   return (
-    <Box height='100vh' display='flex' justifyContent='center' alignItems='center'>
-        <Box width={!isMobile ? '42%' : '100%'} height={!isMobile? '90%': '100%'} sx={{background:'white'}} py={5} px={4}>
+    <Box height='100vh' display='flex' justifyContent='center' alignItems='center' px={5}>
+        <Box px={4}>
           <Box width='100%' display='flex' justifyContent='center'>
             <img src={data?.logo} style={{ maxWidth: `${data?.logoSize}%` }} alt="" />
           </Box>
           <Box display='flex' justifyContent='center' my={2}>
-           <Box>
-           {
-              data?.evolutionQuestion && <Typography variant='h6' textAlign='center' sx={{ color: theme.palette.secondary.main }}
-
-                dangerouslySetInnerHTML={{ __html: data?.evolutionQuestion }}
-              ></Typography>
+            {data?.evolutionQuestion && 
+              <Typography variant='p' width={!isMobile ? '40%' : '100%'} lineHeight={1.5} textAlign='center' sx={{ color: '#634F20' }} dangerouslySetInnerHTML={{ __html: data?.evolutionQuestion }} />
             }
-           </Box>
           </Box>
-          <Box my={2} display='flex' justifyContent='center'>
+          <Box mt={2} display='flex' justifyContent='center'>
             <Rating
               name="simple-controlled"
               value={value}
@@ -54,31 +50,33 @@ console.log({reviewData});
               }}
             />
           </Box>
-          <Box my={4} display='flex' justifyContent='center'>
+          <Box mb={4} display='flex' justifyContent='center'>
 
               <Typography variant='h4' fontWeight='500' color={theme.palette.secondary.main} textAlign='center'>Select Rating</Typography>
 
           </Box>
-          <Box >
           <form onSubmit={handleSubmit}>
             <Box my={2} display='flex' width='100%' justifyContent='center'>
               <TextareaAutosize
                 onChange={(e) => {setReviewData(e.target.value); localStorage.setItem('reviewComment', JSON.stringify(e?.target?.value))}}
                 value={reviewData}
+                className="custom-textarea"
                 placeholder="Type your feedback here..."
                 rows={getRows()} // Set rows dynamically based on screen size
                 style={{
-                  width: '100%',
+                  width: isMobile ? '100%' : isMidView ? '30rem'  : '45rem',
                   padding: '10px',
-                  fontSize: '16px',
+                  fontSize: '15px',
+                  fontWeight:'700',
                   height:'20vh',
-                  color: '#374151',
+                  color: '#6F5821',
                   borderRadius: '2px',
                   borderWidth: '2px',
                   borderColor: 'lightgrey',
                   resize: 'none',
                   background: 'white',
                   '--placeholder-color': '#6F5821',
+                  '--placeholder-font-weigth': '300',
                   '--focus-border-color': 'lightgrey'
                 }}
               />
@@ -87,7 +85,6 @@ console.log({reviewData});
               <PrimaryButton text='Submit' onClick={handleSubmit} type="button" />
             </Box>
           </form>
-          </Box>
         </Box>
       </Box>
   );

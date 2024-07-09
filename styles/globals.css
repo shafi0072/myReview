@@ -5,3 +5,7 @@ body{
 textarea::placeholder {
   color: var(--placeholder-color);
 }
+.custom-textarea::placeholder {
+  color: #6F5821;
+  font-weight: normal; /* Set the placeholder font weight to normal */
+}

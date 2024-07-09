@@ -4,6 +4,7 @@ import { Box, Rating, Typography, useMediaQuery, useTheme, TextareaAutosize, Tex
 import { LandingPageContext } from '@/src/Store/ContextApi';
 import MinHeightTextarea from '../../core/inputs/MuiTextArea';
 import PrimaryButton from '../../core/Buttons/PrimaryButton';
+import Head from 'next/head';
 
 const index = () => {
   const [data, setData, setValue, value] = useContext(LandingPageContext)
@@ -22,7 +23,9 @@ const index = () => {
   };
 
   return (
-    <Box height='100%' my={isMobile ? 0 : 2} display='flex' justifyContent='center' alignItems='center'>
+   <>
+   <Head><title>{data?.pageTitle}</title></Head>
+     <Box height='100%' my={isMobile ? 0 : 2} display='flex' justifyContent='center' alignItems='center'>
       <Box width={!isMobile ? '42%'  : '100%'} height={!isMobile ? '90%' : '100%'} sx={{ background: 'white' }} py={5} px={4}>
         <Box width='100%' display='flex' justifyContent='center'>
           <img src={data?.logo} style={{ maxWidth: !isMobile ? `40%` : '70%' }}  alt="" />
@@ -70,6 +73,7 @@ const index = () => {
         </Box>
       </Box>
     </Box>
+   </>
   );
 };
 

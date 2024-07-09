@@ -35,10 +35,10 @@ const LayoutOneComponent = () => {
           </Box>
           <Box display='flex' justifyContent='center' my={2}>
             {data?.evolutionQuestion && 
-              <Typography variant='h6' textAlign='center' sx={{ color: theme.palette.secondary.main }} dangerouslySetInnerHTML={{ __html: data?.evolutionQuestion }} />
+              <Typography variant='p' lineHeight={1.5}    textAlign='center' sx={{ color: '#634F20' }} dangerouslySetInnerHTML={{ __html: data?.evolutionQuestion }} />
             }
           </Box>
-          <Box my={2} display='flex' justifyContent='center'>
+          <Box mt={2} display='flex' justifyContent='center'>
             <Rating
               name="simple-controlled"
               value={value}
@@ -51,7 +51,7 @@ const LayoutOneComponent = () => {
               }}
             />
           </Box>
-          <Box my={4} display='flex' justifyContent='center'>
+          <Box mb={4} display='flex' justifyContent='center'>
 
               <Typography variant='h4' fontWeight='500' color={theme.palette.secondary.main} textAlign='center'>Select Rating</Typography>
 
@@ -61,20 +61,23 @@ const LayoutOneComponent = () => {
               <TextareaAutosize
                 onChange={(e) => {setReviewData(e.target.value); localStorage.setItem('reviewComment', JSON.stringify(e?.target?.value))}}
                 value={reviewData}
+                className="custom-textarea"
                 placeholder="Type your feedback here..."
                 rows={getRows()} // Set rows dynamically based on screen size
                 style={{
-                  width: '100%',
+                  width: isMobile ? '100%' : isMidView ? '30rem'  : '45rem',
                   padding: '10px',
-                  fontSize: '16px',
+                  fontSize: '15px',
+                  fontWeight:'700',
                   height:'20vh',
-                  color: '#374151',
+                  color: '#6F5821',
                   borderRadius: '2px',
                   borderWidth: '2px',
                   borderColor: 'lightgrey',
                   resize: 'none',
                   background: 'white',
                   '--placeholder-color': '#6F5821',
+                  '--placeholder-font-weigth': '300',
                   '--focus-border-color': 'lightgrey'
                 }}
               />
