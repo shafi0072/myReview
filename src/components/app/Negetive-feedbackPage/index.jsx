@@ -28,25 +28,23 @@ const index = () => {
      <Box height='100%' my={isMobile ? 0 : 2} display='flex' justifyContent='center' alignItems='center'>
       <Box width={!isMobile ? '42%'  : '100%'} height={!isMobile ? '90%' : '100%'} sx={{ background: 'white' }} py={5} px={4}>
         <Box width='100%' display='flex' justifyContent='center'>
-          <img src={data?.logo} style={{ maxWidth: !isMobile ? `40%` : '70%' }}  alt="" />
+          <img src={data?.logo} style={{ maxWidth: `${data?.logoSize}%` }}  alt="" />
         </Box>
-        <Box display='flex' justifyContent='center' my={4}>
+        <Box display='flex' justifyContent='center' my={4} mx={6}>
           {
-            data?.evolutionQuestion && <Typography component='p' fontSize='16px' textAlign='center' sx={{ color: theme.palette.secondary.main }}
+            data?.evolutionQuestion && <Typography component='h2'  className='subheading' textAlign='center'  
 
               dangerouslySetInnerHTML={{ __html: data?.feedbackPrompt }}
             ></Typography>
           }
         </Box>
-        <Box my={2} display='flex' justifyContent='center'>
-
-        </Box>
+      
         <Box >
           <Box width='100%' display='flex' justifyContent='center'>
-            <form onSubmit={handleSubmit} style={{ width: !isMobile ? '50%' : isMidView ? '100%' : '70%' }}>
+            <form onSubmit={handleSubmit} style={{ width: !isMobile ? '50%' : isMidView ? '100%' : '80%' }}>
               <Grid container rowSpacing={1} spacing={1}>
                 <Grid item xs={12} lg={6} md={6} sm={12}>
-                  <TextField sx={{ mr: 1 }} id="outlined-basic" label="First Name" variant="outlined" fullWidth />
+                  <TextField sx={{ mr: 1, }} id="outlined-basic" label="First Name" variant="outlined" fullWidth />
                 </Grid>
                 <Grid item xs={12} lg={6} md={6} sm={12}>
                   <TextField id="outlined-basic" label="Last Name" variant="outlined" fullWidth />
@@ -54,17 +52,17 @@ const index = () => {
               </Grid>
               <TextField sx={{ my: 1 }} id="outlined-basic" label="Mobile" variant="outlined" fullWidth />
               <TextField sx={{ mb: 1 }} id="outlined-basic" label="Email" variant="outlined" fullWidth />
-              <Typography sx={{ mb: 2 }}>
-                <Checkbox /> <Typography component='span'>I agree to be contacted by the hotel regarding my recent stay and to receive updates on how my feedback is being addressed.</Typography>
+              <Typography sx={{ mb: 2, lineHeight:'20px', flexBasis:'100%', fontSize:'12px' }} >
+                <Checkbox /> I agree to be contacted by the hotel regarding my recent stay and to receive updates on how my feedback is being addressed.
               </Typography>
               <Box display='flex' justifyContent='start'>
                 <PrimaryButton text='Submit' type="submit" />
               </Box>
             </form>
           </Box>
-          <Box display='flex' justifyContent='center' my={4}>
+          <Box display='flex' justifyContent='center' my={4} mx={6}>
             {
-              data?.evolutionQuestion && <Typography component='p' fontSize='12px' textAlign='center' sx={{ color: theme.palette.secondary.main }}
+              data?.evolutionQuestion && <Typography className='openSans' component='p' fontSize='15px' textAlign='center' sx={{ color: '#634F20', fontWeight:'300', lineHeight:'21px' }}
 
                 dangerouslySetInnerHTML={{ __html: data?.getPrompt }}
               ></Typography>

@@ -101,8 +101,8 @@ const DIrectionCode = () => {
       <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 2, sm: 6, md: 10 }} my={2}>
         <Grid item xs={2} sm={4} md={4} >
           <Box sx={{ borderBottom: `10px dashed ${theme.palette.primary.main}` }}>
-            <Typography variant="h4" fontWeight='bolder' color={theme.palette.secondary.main}>Copy Your <br />Feedback</Typography>
-            <Typography sx={{ my: 2 }} variant="h6" color={theme.palette.secondary.main}>Click on the copy icon to the right to save your feedback from the previous step to your clipboard.
+            <Typography variant="h2" className='header-title' >Copy Your <br />Feedback</Typography>
+            <Typography sx={{ mt: 2 }} mb={8} variant="h2" className='copyFeedbackPromptIcon'>Click on the copy icon to the right to save your feedback from the previous step to your clipboard.
             </Typography>
           </Box>
         </Grid>
@@ -150,14 +150,14 @@ const DIrectionCode = () => {
         </Grid>
         <Grid item xs={2} sm={4} md={4} >
           <Box sx={{ borderBottom: `10px dashed ${theme.palette.primary.main}` }}>
-            <Typography variant="h4" fontWeight='bolder' textAlign='end' color={theme.palette.secondary.main}>Choose a<br />Review Site</Typography>
-            <Typography sx={{ my: 2 }} variant="h6" textAlign='end' color={theme.palette.secondary.main}>Select one of the review sites listed. Simply paste your feedback into their review form and submit.
+            <Typography className='header-title' variant="h2" fontWeight='bolder' textAlign='end' color={theme.palette.secondary.main}>Choose a<br />Review Site</Typography>
+            <Typography sx={{ my: 2 }} variant="h2" textAlign='end' className='copyFeedbackPromptIcon'>Select one of the review sites listed. Simply paste your feedback into their review form and submit.
             </Typography>
           </Box>
         </Grid>
       </Grid>
       <Box>
-        <Typography textAlign={'center'} mt={2} variant='h3' color={theme.palette.secondary.main} fontWeight='bolder'>
+        <Typography textAlign={'center'} mt={2} variant='h2' className='thankyoumessage'>
           {data?.thankYouMessage}
         </Typography>
       </Box>

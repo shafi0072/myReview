@@ -37,14 +37,14 @@ const index = () => {
     <Head>
       <title>{data?.pageTitle}</title>
     </Head>
-      <Box  height='100%' my={isMobile?0:2} display='flex' justifyContent='center' alignItems='center' >
+      <Box    height='100%' my={isMobile?0:2} display='flex' justifyContent='center' alignItems='center' >
         <Box width={!isMobile && !isMidView ? '42%' : isMidView && !isMobile ? '70%' : isMobile ? '100%' : '100%'} height={!isMobile? '90%': '100%'} sx={{background:'white'}} py={5} px={4}>
           <Box width='100%' display='flex' justifyContent='center'>
-            <img src={data?.logo} style={{ maxWidth: !isMobile ? `40%` : '70%' }} alt="" />
+            <img src={data?.logo} style={{ maxWidth: `${data?.logoSize}%` }} alt="" />
           </Box>
-          <Box display='flex' justifyContent='center' my={4}>
+          <Box display='flex' justifyContent='center' my={4} mx={6}>
             {
-              data?.evolutionQuestion && <Typography component='p' fontSize='16px' textAlign='center' sx={{ color: theme.palette.secondary.main }}
+              data?.evolutionQuestion && <Typography component='p'  textAlign='center' sx={{ color:'#634F20', fontWeight:'300', fontSize:'18px', lineHeight:'25px'  }}
 
                 dangerouslySetInnerHTML={{ __html: data?.reviewPrompt }}
               ></Typography>

@@ -28,14 +28,14 @@ const LayoutOneComponent = () => {
   console.log({reviewData});
   return (
     <LayoutOne>
-      <Box height='100vh' display='flex' justifyContent='center' alignItems='center' px={5}>
+      <Box height='100vh' display='flex' justifyContent='center' alignItems='center' px={10}>
         <Box px={4}>
           <Box width='100%' display='flex' justifyContent='center'>
             <img src={data?.logo} style={{ maxWidth: `${data?.logoSize}%` }} alt="" />
           </Box>
           <Box display='flex' justifyContent='center' my={2}>
             {data?.evolutionQuestion && 
-              <Typography variant='p' lineHeight={1.5}    textAlign='center' sx={{ color: '#634F20' }} dangerouslySetInnerHTML={{ __html: data?.evolutionQuestion }} />
+              <Typography variant='p' lineHeight={1.5}  textAlign='center' sx={{ color: '#634F20' }} dangerouslySetInnerHTML={{ __html: data?.evolutionQuestion }} className='openSans' />
             }
           </Box>
           <Box mt={2} display='flex' justifyContent='center'>
@@ -56,8 +56,9 @@ const LayoutOneComponent = () => {
               <Typography variant='h4' fontWeight='500' color={theme.palette.secondary.main} textAlign='center'>Select Rating</Typography>
 
           </Box>
-          <form onSubmit={handleSubmit}>
-            <Box my={2} display='flex' width='100%' justifyContent='center'>
+          <Box display='flex' justifyContent='center'>
+          <form  onSubmit={handleSubmit} >
+            <Box my={2} mx={1} display='flex' width='100%' justifyContent='center'>
               <TextareaAutosize
                 onChange={(e) => {setReviewData(e.target.value); localStorage.setItem('reviewComment', JSON.stringify(e?.target?.value))}}
                 value={reviewData}
@@ -73,7 +74,7 @@ const LayoutOneComponent = () => {
                   color: '#6F5821',
                   borderRadius: '2px',
                   borderWidth: '2px',
-                  borderColor: 'lightgrey',
+                  borderColor: '#E9E9E9',
                   resize: 'none',
                   background: 'white',
                   '--placeholder-color': '#6F5821',
@@ -82,10 +83,11 @@ const LayoutOneComponent = () => {
                 }}
               />
             </Box>
-            <Box display='flex' justifyContent='start'>
+            <Box mx={2} display='flex' justifyContent='start'>
               <PrimaryButton text='Submit' onClick={handleSubmit} type="button" />
             </Box>
           </form>
+          </Box>
         </Box>
       </Box>
     </LayoutOne>
