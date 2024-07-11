@@ -52,3 +52,10 @@ p{
 .openSans{
   font-family: "Open Sans", Sans-serif;
 }
+
+.fieldStyle{
+  background-color: #ffffff!important;
+  border-color: #E9E9E9!important;
+  border-width: 2px 2px 2px 2px!important;
+  color: #6F5821!important
+}

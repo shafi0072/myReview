@@ -19,7 +19,7 @@ const themeOptions = {
   },
   palette:{
     primary: {
-      main: "#ecbc4d",
+      main: "#ebbc4c",
     },
     secondary: {
       light: "#ac9f83",

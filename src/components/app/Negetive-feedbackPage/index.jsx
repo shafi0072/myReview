@@ -26,11 +26,11 @@ const index = () => {
    <>
    <Head><title>{data?.pageTitle}</title></Head>
      <Box height='100%' my={isMobile ? 0 : 2} display='flex' justifyContent='center' alignItems='center'>
-      <Box width={!isMobile ? '42%'  : '100%'} height={!isMobile ? '90%' : '100%'} sx={{ background: 'white' }} py={5} px={4}>
+      <Box width={!isMobile ? '804px'  : '100%'} height={!isMobile ? '90%' : '100%'} sx={{ background: 'white' }} py={5} px={4}>
         <Box width='100%' display='flex' justifyContent='center'>
           <img src={data?.logo} style={{ maxWidth: `${data?.logoSize}%` }}  alt="" />
         </Box>
-        <Box display='flex' justifyContent='center' my={4} mx={6}>
+        <Box display='flex' justifyContent='center' my={4} >
           {
             data?.evolutionQuestion && <Typography component='h2'  className='subheading' textAlign='center'  
 
@@ -55,12 +55,13 @@ const index = () => {
               <Typography sx={{ mb: 2, lineHeight:'20px', flexBasis:'100%', fontSize:'12px' }} >
                 <Checkbox /> I agree to be contacted by the hotel regarding my recent stay and to receive updates on how my feedback is being addressed.
               </Typography>
+              
               <Box display='flex' justifyContent='start'>
                 <PrimaryButton text='Submit' type="submit" />
               </Box>
             </form>
           </Box>
-          <Box display='flex' justifyContent='center' my={4} mx={6}>
+          <Box display='flex' justifyContent='center' my={4} >
             {
               data?.evolutionQuestion && <Typography className='openSans' component='p' fontSize='15px' textAlign='center' sx={{ color: '#634F20', fontWeight:'300', lineHeight:'21px' }}
 
