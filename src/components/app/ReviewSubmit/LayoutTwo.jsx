@@ -101,7 +101,7 @@ console.log({reviewData});
       </Box>}
       {
         isMobile && <Box height={!isMobile ? '100vh' : '100%'} display='flex' justifyContent='center' alignItems='center' px={isMobile ? 2 : 10} py={isMobile ? 2 : 10}>
-        <Box sx={{background:'white'}} px={1} py={1}>
+        <Box sx={{background:'white'}} px={3} py={1}>
           <Box width='100%' display='flex' justifyContent='center'>
             <img src={data?.logo} style={{ maxWidth: !isMobile ? `${data?.logoSize}%` : '100%' }} alt="" />
           </Box>
@@ -118,7 +118,7 @@ console.log({reviewData});
                 setValue(newValue);
               }}
               sx={{
-                fontSize: '60px',
+                fontSize: '50px',
                 color: '#ecbc4d'
               }}
             />

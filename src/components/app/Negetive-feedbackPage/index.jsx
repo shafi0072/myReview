@@ -41,7 +41,7 @@ const index = () => {
       
         <Box >
           <Box width='100%' display='flex' justifyContent='center'>
-            <form onSubmit={handleSubmit} style={{ width: !isMobile ? '50%' : isMidView ? '100%' : '80%' }}>
+            <form onSubmit={handleSubmit} style={{ width: !isMobile ? '60%' : isMidView ? '100%' : '80%' }}>
               <Grid container rowSpacing={1} spacing={1}>
                 <Grid item xs={12} lg={6} md={6} sm={12}>
                   <TextField sx={{ mr: 1, }} id="outlined-basic" label="First Name" variant="outlined" fullWidth />

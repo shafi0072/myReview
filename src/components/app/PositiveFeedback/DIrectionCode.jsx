@@ -100,17 +100,18 @@ const DIrectionCode = () => {
     <Box>
       <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 2, sm: 6, md: 10 }} my={2}>
         <Grid item xs={2} sm={4} md={4} >
-          <Box sx={{ borderBottom: `10px dashed ${theme.palette.primary.main}` }}>
+          <Box >
             <Typography variant="h2" className='header-title' >Copy Your <br />Feedback</Typography>
-            <Typography sx={{ mt: 2 }} mb={8} variant="h2" className='copyFeedbackPromptIcon'>Click on the copy icon to the right to save your feedback from the previous step to your clipboard.
+            <Typography sx={{ mt: 2 }} mb={5} variant="h2" className='copyFeedbackPromptIcon'>Click on the copy icon to the right to save your feedback from the previous step to your clipboard.
             </Typography>
+            <img width={'100%'} src="https://landing.nolimits.digital/wp-content/uploads/2024/04/horizontal-line.jpg" alt="" />
           </Box>
         </Grid>
         <Grid item xs={2} sm={4} md={2} >
           <Box>
             <Typography textAlign='center' variant="h3" fontWeight='bolder' color={theme.palette.secondary.main}>STEP<br />01</Typography>
             <Box display='flex' justifyContent='center'>
-              <Box width='10px' height='200px' sx={{ background: theme.palette.primary.main }}></Box>
+              <Box width='12px' height='200px' sx={{ background: theme.palette.primary.main }}></Box>
             </Box>
           </Box>
         </Grid>
@@ -144,15 +145,16 @@ const DIrectionCode = () => {
           <Box>
             <Typography textAlign='center' variant="h3" fontWeight='bolder' color={theme.palette.secondary.main}>STEP<br />02</Typography>
             <Box display='flex' justifyContent='center'>
-              <Box width='10px' height={data?.providers?.length ? '350px' : '200px'} sx={{ background: theme.palette.primary.main }}></Box>
+              <Box width='12px' height={data?.providers?.length ? '350px' : '200px'} sx={{ background: theme.palette.primary.main }}></Box>
             </Box>
           </Box>
         </Grid>
         <Grid item xs={2} sm={4} md={4} >
-          <Box sx={{ borderBottom: `10px dashed ${theme.palette.primary.main}` }}>
+          <Box>
             <Typography className='header-title' variant="h2" fontWeight='bolder' textAlign='end' color={theme.palette.secondary.main}>Choose a<br />Review Site</Typography>
             <Typography sx={{ my: 2 }} variant="h2" textAlign='end' className='copyFeedbackPromptIcon'>Select one of the review sites listed. Simply paste your feedback into their review form and submit.
-            </Typography>
+            </Typography> 
+            <img width={'100%'} src="https://landing.nolimits.digital/wp-content/uploads/2024/04/horizontal-line.jpg" alt="" />
           </Box>
         </Grid>
       </Grid>
