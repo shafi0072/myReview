@@ -5,7 +5,7 @@ import { LandingPageContext } from '@/src/Store/ContextApi';
 import MinHeightTextarea from '../../core/inputs/MuiTextArea';
 import PrimaryButton from '../../core/Buttons/PrimaryButton';
 import Head from 'next/head';
-
+import LayoutTwoWrapper from '../../core/Layout/LayoutTwo'
 const index = () => {
   const [data, setData, setValue, value] = useContext(LandingPageContext)
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down(870));
@@ -23,22 +23,19 @@ const index = () => {
   };
 
   return (
-   <>
-   <Head><title>{data?.pageTitle}</title></Head>
-     <Box height='100%' my={isMobile ? 0 : 2} display='flex' justifyContent='center' alignItems='center'>
-      <Box width={!isMobile ? '804px'  : '100%'} height={!isMobile ? '90%' : '100%'} sx={{ background: 'white' }} py={5} px={4}>
-        <Box width='100%' display='flex' justifyContent='center'>
-          <img src={data?.logo} style={{ maxWidth: `${data?.logoSize}%` }}  alt="" />
-        </Box>
+    <>
+      <Head><title>{data?.pageTitle}</title></Head>
+      <LayoutTwoWrapper data={data}>
+
         <Box display='flex' justifyContent='center' my={4} >
           {
-            data?.evolutionQuestion && <Typography component='h2'  className='subheading' textAlign='center'  
+            data?.evolutionQuestion && <Typography component='h2' className='subheading' textAlign='center'
 
               dangerouslySetInnerHTML={{ __html: data?.feedbackPrompt }}
             ></Typography>
           }
         </Box>
-      
+
         <Box >
           <Box width='100%' display='flex' justifyContent='center'>
             <form onSubmit={handleSubmit} style={{ width: !isMobile ? '60%' : isMidView ? '100%' : '80%' }}>
@@ -52,27 +49,27 @@ const index = () => {
               </Grid>
               <TextField sx={{ my: 1 }} id="outlined-basic" label="Mobile" variant="outlined" fullWidth />
               <TextField sx={{ mb: 1 }} id="outlined-basic" label="Email" variant="outlined" fullWidth />
-              <Typography sx={{ mb: 2, lineHeight:'20px', flexBasis:'100%', fontSize:'12px' }} >
-                <Checkbox /> I agree to be contacted by the hotel regarding my recent stay and to receive updates on how my feedback is being addressed.
-              </Typography>
-              
-              <Box display='flex' justifyContent='start'>
-                <PrimaryButton text='Submit' type="submit" />
-              </Box>
+               <Box display='flex' mb={2}><input type="checkbox" class="form-check-input colorCheck" id="exampleCheck1"/>
+                <label class="form-check-label" for="exampleCheck1" style={{marginLeft:'2%',color: 'grey'}}>I agree to be contacted by the hotel regarding my recent stay and to receive updates on how my feedback is being addressed.</label>
+                </Box>
+
+                <Box display='flex' justifyContent='start'>
+                  <PrimaryButton text='Submit' type="submit" />
+                </Box>
             </form>
           </Box>
           <Box display='flex' justifyContent='center' my={4} >
             {
-              data?.evolutionQuestion && <Typography className='openSans' component='p' fontSize='15px' textAlign='center' sx={{ color: '#634F20', fontWeight:'300', lineHeight:'21px' }}
+              data?.evolutionQuestion && <Typography className='openSans' component='p' fontSize='15px' textAlign='center' sx={{ color: '#634F20', fontWeight: '300', lineHeight: '21px' }}
 
                 dangerouslySetInnerHTML={{ __html: data?.getPrompt }}
               ></Typography>
             }
           </Box>
         </Box>
-      </Box>
-    </Box>
-   </>
+      </LayoutTwoWrapper>
+
+    </>
   );
 };
 

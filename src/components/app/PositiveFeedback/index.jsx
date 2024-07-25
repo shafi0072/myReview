@@ -7,7 +7,7 @@ import PrimaryButton from '../../core/Buttons/PrimaryButton';
 import dynamic from 'next/dynamic';
 import MobileView from './MobileView';
 import Head from 'next/head';
-
+import LayoutTwoWrapper from '../../core/Layout/LayoutTwo'
 const DIrectionCode = dynamic(() => import('./DIrectionCode'), {
   loading: () => <p>Loading...</p>,
   ssr: false // Disable server-side rendering for this component
@@ -37,11 +37,9 @@ const index = () => {
       <Head>
         <title>{data?.pageTitle}</title>
       </Head>
-      <Box height='100%' my={isMobile ? 0 : 2} display='flex' justifyContent='center' alignItems='center' >
-        <Box width={!isMobile && !isMidView ? '804px' : isMidView && !isMobile ? '804px' : isMobile ? '100%' : '100%'} height={!isMobile ? '90%' : '100%'} sx={{ background: 'white' }} py={5} px={4}>
-          <Box width='100%' display='flex' justifyContent='center'>
-            <img src={data?.logo} style={{ maxWidth: !isMobile ? `${data?.logoSize}%` : '100%' }} alt="" />
-          </Box>
+      <LayoutTwoWrapper data={data} >
+       
+          
           <Box display='flex' justifyContent='center' my={4} >
             {
               data?.evolutionQuestion && <Typography component='p' textAlign='center' sx={{ color: '#634F20', fontWeight: '300', fontSize: '18px', lineHeight: '25px' }}
@@ -55,8 +53,8 @@ const index = () => {
             {isMobile && <MobileView />}
           </Box>
 
-        </Box>
-      </Box>
+        </LayoutTwoWrapper>
+     
     </>
   );
 };
