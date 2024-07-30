@@ -5,6 +5,8 @@ export const LandingPageContext = createContext();
 
 const ContextApis = ({ children }) => {
   const [data, setData] = useState({});
+  const [submitableData, setSubmitableData] = useState({});
+  const [submitableDataTwo, setSubmitableDataTwo] = useState({});
   const [reviewData, setReviewData] = useState('')
   const [value, setValue] = useState(3)
   const [loading, setLoading] = useState(true)
@@ -77,12 +79,12 @@ const ContextApis = ({ children }) => {
 
 
   }, [id])
-  console.log({ data })
+  console.log({ submitableData })
 
   return (
 
 
-      <LandingPageContext.Provider value={[data, setData, value, setValue, reviewData, setReviewData]}>
+      <LandingPageContext.Provider value={[data, setData, value, setValue, reviewData, setReviewData, submitableData, setSubmitableData, submitableDataTwo, setSubmitableDataTwo]}>
         {children}
       </LandingPageContext.Provider>
 
