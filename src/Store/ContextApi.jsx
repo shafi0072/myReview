@@ -59,12 +59,17 @@ const ContextApis = ({ children }) => {
       let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://reviewoso.eu-south-1.elasticbeanstalk.com/',
+        url: '/api/',  // Use the proxied path
         headers: {
           'Content-Type': 'application/json'
         },
         data: data
       };
+      
+      axios(config)
+        .then(response => console.log(response.data))
+        .catch(error => console.error('Error:', error));
+      
 
       axios.request(config)
         .then((response) => {
