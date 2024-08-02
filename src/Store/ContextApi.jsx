@@ -59,7 +59,7 @@ const ContextApis = ({ children }) => {
       let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'https://reviewoso-bac-7ec066579c00.herokuapp.com/',
+        url: 'http://18.102.51.122:5050/',
         headers: {
           'Content-Type': 'application/json'
         },
