@@ -59,7 +59,7 @@ const ContextApis = ({ children }) => {
       let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://18.102.51.122:5050/',
+        url: 'http://18.102.122.136:5050/',
         headers: {
           'Content-Type': 'application/json'
         },
