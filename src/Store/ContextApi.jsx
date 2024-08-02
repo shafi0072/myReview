@@ -59,7 +59,7 @@ const ContextApis = ({ children }) => {
       let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://18.102.122.136:5050/',
+        url: 'http://reviewoso.eu-south-1.elasticbeanstalk.com/',
         headers: {
           'Content-Type': 'application/json'
         },
